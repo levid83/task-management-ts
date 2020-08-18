@@ -1,9 +1,9 @@
 import { Repository, EntityRepository } from 'typeorm';
-import { Task } from './tasks/task.entity';
-import { CreateTaskDto } from './tasks/dto/create-task.dto';
-import { TaskStatus } from './tasks/task-status.enum';
+import { Task } from './task.entity';
+import { CreateTaskDto } from './dto/create-task.dto';
+import { TaskStatus } from './task-status.enum';
 import { InternalServerErrorException } from '@nestjs/common';
-import { GetTasksFilterDto } from './tasks/dto/get-tasks-filter.dto';
+import { GetTasksFilterDto } from './dto/get-tasks-filter.dto';
 
 @EntityRepository(Task)
 export class TaskRepository extends Repository<Task> {

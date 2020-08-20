@@ -37,7 +37,7 @@ export class TasksService {
       throw new NotFoundException(`Task with ID "${id}" not found`);
     }
   }
-  async updataTaskStatus(
+  async updateTaskStatus(
     id: number,
     status: TaskStatus,
     user: User,

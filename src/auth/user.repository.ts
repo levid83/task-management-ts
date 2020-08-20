@@ -14,7 +14,7 @@ export class UserRepository extends Repository<User> {
 
     const exist = await this.findOne({ username: username });
     if (!exist) {
-      const user = new User();
+      const user = this.create();
       user.username = username;
       user.salt = await bcrypt.genSalt();
       user.password = await this.hashPassword(password, user.salt);

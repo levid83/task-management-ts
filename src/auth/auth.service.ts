@@ -4,6 +4,7 @@ import { UserRepository } from './user.repository';
 import { InjectRepository } from '@nestjs/typeorm';
 import { JwtService } from '@nestjs/jwt';
 import { JwtPayload } from './jwt-payload.interface';
+import { User } from './user.entity';
 
 @Injectable()
 export class AuthService {
@@ -31,5 +32,15 @@ export class AuthService {
     const accessToken = await this.jwtService.sign(payload);
 
     return { accessToken };
+  }
+
+  checkAuth(
+    user: User | undefined,
+  ): { username: string; isAuthenticated: boolean } {
+    console.log(user);
+    if (!user || user.username.length === 0) {
+      return { username: '', isAuthenticated: false };
+    }
+    return { username: user.username, isAuthenticated: true };
   }
 }

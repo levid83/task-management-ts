@@ -11,12 +11,7 @@ async function bootstrap() {
   app.use(helmet());
   app.set('trust proxy', 1);
 
-  if (process.env.NODE_ENV === 'development') {
-    app.enableCors();
-  } else {
-    app.enableCors({ origin: serverConfig.origin });
-  }
-
+  app.enableCors({ origin: serverConfig.origin });
   const port = process.env.PORT || serverConfig.port;
   await app.listen(port);
 }

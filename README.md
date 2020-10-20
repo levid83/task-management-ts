@@ -10,6 +10,10 @@ Task Management - a simple demo project on how to use [Nest](https://github.com/
 - task status validation with pipe
 - property validator in DTOs
 
+### Front-end
+
+- Here you can find the frontend for the [Task Management](https://github.com/levid83/task-management-frontend) project
+
 ## Installation
 
 ```bash
